@@ -1,0 +1,8 @@
+
+# Compiled Directories 
+client/public/
+
+# Dependency Directories
+node_modules/
+
+package-lock.json
