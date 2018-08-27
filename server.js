@@ -3,11 +3,12 @@ var path = require('path');
 var bodyParser = require('body-parser');
 
 var app = express();
+var port = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, './client')));
 
-app.listen(3000, () => console.log('Server listening on port 3000!'))
+app.listen(port, () => console.log('Server listening on port ' + port + '.'));
 
 module.exports = app;
