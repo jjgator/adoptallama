@@ -1,17 +1,21 @@
 import React from 'react';
 import axios from 'axios';
-import { Modal, Button } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import Llama from './Llama.jsx';
 import TopNav from './TopNav.jsx';
-import Home from './Home.jsx';
+import Edit from './Edit.jsx';
+
 
 class Profile extends React.Component {
   constructor() {
     super();
     this.state = {
-      user: {}
+      user: {},
+      showModal: false,
     };
     this.navClickHandler = this.navClickHandler.bind(this);
+    this.editProfile = this.editProfile.bind(this);
+    this.closeModal = this.closeModal.bind(this);
   }
 
   componentDidMount() {
@@ -31,15 +35,25 @@ class Profile extends React.Component {
     }
   }
 
+  editProfile() {
+    this.setState({showModal: true});
+  }
+
+  closeModal() {
+    this.setState({showModal: false});
+  }
+
   render () {
     return (
       <div>
         <TopNav onSelect={this.navClickHandler}/>
+        <Edit showModal={this.state.showModal} closeModal={this.closeModal} user={this.state.user}/>
         <Llama 
           name={this.state.user.llama_name}
           description={this.state.user.description}
           img={this.state.user.img_link}
         />
+        <Button onClick={this.editProfile}>Edit Profile</Button>
       </div>
     )
   }
