@@ -12,4 +12,13 @@ router.get('/profiles', (req, res) => {
   })
 });
 
+router.post('/user', (req, res) => {
+  const username = req.body.username;
+  User.find({username: username}, (err, user) => {
+    if (err)
+      res.send(err);
+    res.json(user);
+  })
+})
+
 module.exports = router;

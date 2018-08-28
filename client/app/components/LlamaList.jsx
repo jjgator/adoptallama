@@ -6,7 +6,7 @@ const LlamaList = (props) => (
     {props.llamalist.map((llama, i) => {
       return <Llama 
         key={i}
-        name={llama.name}
+        name={llama.llama_name}
         description={llama.description}
         img={llama.img_link}
       />
