@@ -16,7 +16,7 @@ const TopNav = (props) => (
         <Nav pullRight>
         {props.page === "home" ? 
           <NavItem >
-            <Link to="/view"><span>View/Edit Profile</span></Link>
+            <Link to="/profile"><span>View/Edit Profile</span></Link>
           </NavItem> :
           <NavItem eventKey={'logout'} href='/'>Logout</NavItem>
         }  

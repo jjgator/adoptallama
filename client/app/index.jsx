@@ -8,7 +8,7 @@ render((
   <BrowserRouter>
     <div>
       <Route exact path='/' component={Home} />
-      <Route exact path='/view' component={Profile} />
+      <Route exact path='/profile' component={Profile} />
     </div>
   </BrowserRouter>
 ), document.getElementById('app'));
