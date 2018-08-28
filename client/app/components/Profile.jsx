@@ -5,7 +5,7 @@ import Llama from './Llama.jsx';
 import TopNav from './TopNav.jsx';
 import Home from './Home.jsx';
 
-class EditProfile extends React.Component {
+class Profile extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -45,6 +45,6 @@ class EditProfile extends React.Component {
   }
 }
 
-export default EditProfile;
+export default Profile;
 
 
