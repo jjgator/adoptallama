@@ -19,6 +19,6 @@ router.post('/user', (req, res) => {
       res.send(err);
     res.json(user);
   })
-})
+});
 
 module.exports = router;

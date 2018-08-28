@@ -1,6 +1,6 @@
 import React from 'react';
-import { Navbar, Nav, NavItem } from 'react-bootstrap';
-import AddButton from './AddButton.jsx';
+import { Navbar, Nav, NavItem, Button } from 'react-bootstrap';
+import { Link } from "react-router-dom";
 
 const TopNav = (props) => (
     <Navbar onSelect={props.onSelect}>
@@ -14,7 +14,12 @@ const TopNav = (props) => (
           <NavItem eventKey={'login'} href='#'>Login</NavItem>
         </Nav> : 
         <Nav pullRight>
-          <NavItem eventKey={'profile'} href='#'>Edit Profile</NavItem>
+        {props.page === "home" ? 
+          <NavItem >
+            <Link to="/edit"><span>View/Edit Profile</span></Link>
+          </NavItem> :
+          <NavItem eventKey={'logout'} href='/'>Logout</NavItem>
+        }  
         </Nav>
       }
     </Navbar>
