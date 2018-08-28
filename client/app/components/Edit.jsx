@@ -11,7 +11,7 @@ const Edit = (props) => (
         <label>Name</label>
         <input defaultValue={props.user.llama_name} id='name'></input><br/>
         <label>Description</label>
-        <input defaultValue={props.user.description} id='desription'></input><br/>
+        <input defaultValue={props.user.description} id='description'></input><br/>
         <label>Image Link</label>
         <input defaultValue={props.user.img_link} id='photo'></input><br/>
       </Modal.Body>

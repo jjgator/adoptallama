@@ -16,6 +16,7 @@ class Profile extends React.Component {
     this.navClickHandler = this.navClickHandler.bind(this);
     this.editProfile = this.editProfile.bind(this);
     this.closeModal = this.closeModal.bind(this);
+    this.save = this.save.bind(this);
   }
 
   componentDidMount() {
@@ -43,11 +44,36 @@ class Profile extends React.Component {
     this.setState({showModal: false});
   }
 
+  save() {
+    const currentUser = this.state.user.username;
+    const llama_name = document.getElementById('name').value;
+    const description = document.getElementById('description').value;
+    const img_link = document.getElementById('photo').value;
+
+    axios.post('/edit', {
+      username: currentUser,
+      llama_name: llama_name,
+      description: description,
+      img_link: img_link
+    })
+    .then(response => {
+      const updatedUser = response.data[0];
+      this.setState({user: updatedUser});
+    })
+
+    this.closeModal();
+  }
+
   render () {
     return (
       <div>
         <TopNav onSelect={this.navClickHandler}/>
-        <Edit showModal={this.state.showModal} closeModal={this.closeModal} user={this.state.user}/>
+        <Edit 
+          showModal={this.state.showModal} 
+          closeModal={this.closeModal} 
+          user={this.state.user}
+          save={this.save}
+        />
         <Llama 
           name={this.state.user.llama_name}
           description={this.state.user.description}

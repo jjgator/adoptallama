@@ -21,4 +21,22 @@ router.post('/user', (req, res) => {
   })
 });
 
+router.post('/edit', (req, res) => {
+  const doc = {
+    username: req.body.username,
+    llama_name: req.body.llama_name,
+    description: req.body.description,
+    img_link: req.body.img_link
+  };
+  User.update({username: req.body.username}, doc, (err, result) => {
+    if (err)
+      res.send(err);
+    User.find({username: req.body.username}, (err, user) => {
+      if (err)
+        res.send(err);
+      res.json(user);
+    })
+  });
+});
+
 module.exports = router;
