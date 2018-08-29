@@ -10,6 +10,13 @@
 - Node 8.7.^
 - npm 5.4.^
 
+If you have installed the above requirements, and [installed dependencies](#installing-dependencies), from the CLI, run: 
+
+```sh
+npm run build
+npm start
+```
+Navigate to localhost:3000 in your browser.
 
 ### Development
 
@@ -26,3 +33,4 @@ From within the root directory:
 ```sh
 npm install 
 ```
+[Requirements](#requirements)
