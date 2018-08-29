@@ -31,6 +31,7 @@ router.post('/edit', (req, res) => {
   User.update({username: req.body.username}, doc, (err, result) => {
     if (err)
       res.send(err);
+    //return updated user
     User.find({username: req.body.username}, (err, user) => {
       if (err)
         res.send(err);
