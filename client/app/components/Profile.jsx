@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import { Button } from 'react-bootstrap';
+import { Button, Grid } from 'react-bootstrap';
 import Llama from './Llama.jsx';
 import TopNav from './TopNav.jsx';
 import Edit from './Edit.jsx';
@@ -74,12 +74,14 @@ class Profile extends React.Component {
           user={this.state.user}
           save={this.save}
         />
-        <Llama 
-          name={this.state.user.llama_name}
-          description={this.state.user.description}
-          img={this.state.user.img_link}
-        />
-        <Button onClick={this.editProfile}>Edit Profile</Button>
+        <Grid>
+          <Llama 
+            name={this.state.user.llama_name}
+            description={this.state.user.description}
+            img={this.state.user.img_link}
+          />
+          <Button onClick={this.editProfile}>Edit Profile</Button>
+        </Grid>
       </div>
     )
   }
