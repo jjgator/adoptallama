@@ -2,7 +2,7 @@ import React from 'react';
 import { Image, Col, Row } from 'react-bootstrap';
 
 const Llama = (props) => (
-  <Row style={{marginBottom: '20px'}}>
+  <Row className="llama" style={{marginBottom: '20px'}}>
     <Col xs={3}>
       <Image src={props.img} width='250' height='200' rounded/>
     </Col>
